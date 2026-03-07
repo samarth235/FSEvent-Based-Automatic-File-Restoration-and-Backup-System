@@ -1,8 +1,3 @@
-# FSEvent-Based-Automatic-File-Restoration-and-Backup-System
-I’ll give you a **complete GitHub README template** including **description, installation, and how to run the project** so anyone can use it on their system. You can directly paste this into your `README.md`.
-
----
-
 # FSEvent-Based Automatic File Restoration and Backup System
 
 ## 📌 Project Description
