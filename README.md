@@ -134,19 +134,6 @@ Select the file version you want to restore.
 
 This project is open source and available under the MIT License.
 
----
 
-## 👨‍💻 Author
-
-**Samarth S**
-
-GitHub:
-[https://github.com/samarth235](https://github.com/samarth235)
-
----
-
-✅ If you want, I can also show you **3 things that will make your GitHub project look much more professional**:
-
-* Add **screenshots of the project working**
 * Add **architecture diagram**
 * Add **demo GIF for monitoring + backup**.
