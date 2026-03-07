@@ -2,44 +2,40 @@
 
 ## 📌 Project Description
 
-The **FSEvent-Based Automatic File Restoration and Backup System** is a file monitoring application that automatically detects changes in the file system and creates backups of files in real time.
+The **FSEvent-Based Automatic File Restoration and Backup System** is a system-level application written in **C** that monitors file system activities and automatically creates backups when changes occur.
 
-The system continuously monitors selected directories for file events such as **file creation, modification, deletion, and renaming**. Whenever a change occurs, the system automatically creates a backup copy of the affected file. This ensures that important files can be restored in case of accidental deletion, corruption, or unwanted changes.
+The program watches a specified directory and detects file events such as **file creation, modification, deletion, and renaming**. Whenever a file is modified or created, the system automatically stores a backup copy in a backup directory. This helps protect important files from accidental loss or corruption.
 
-By using **event-based file monitoring**, the system avoids repeatedly scanning the entire directory, making it efficient and lightweight.
+The system uses **Linux file system event mechanisms (inotify)** to efficiently detect file changes without continuously scanning directories.
 
 ---
 
 # 🚀 Features
 
-* Real-time file monitoring
-* Automatic backup of modified files
-* Restore deleted or corrupted files
-* Event-driven file tracking
-* Lightweight and efficient system
+* Real-time file system monitoring
+* Automatic backup of files when changes occur
+* Detection of file creation, modification, and deletion
+* Lightweight and efficient implementation in C
+* Helps prevent accidental data loss
 
 ---
 
 # ⚙️ Technologies Used
 
-* Python
-* File System Event Monitoring (FSEvents / watchdog library)
-* OS file handling modules
+* **C Programming Language**
+* **Linux inotify (File System Event API)**
+* **GCC Compiler**
+* **Linux System Calls**
 
 ---
 
 # 📂 Project Structure
 
-Example project structure:
-
 ```
 FSEvent-Based-Automatic-File-Restoration-and-Backup-System
 │
-├── backup/                # Stores backup copies
-├── monitor.py             # File monitoring logic
-├── restore.py             # File restoration logic
-├── config.py              # Directory configuration
-├── requirements.txt       # Dependencies
+├── main.c              # Main program for file system monitoring
+├── backup/             # Directory where backup copies are stored
 └── README.md
 ```
 
@@ -49,15 +45,13 @@ FSEvent-Based-Automatic-File-Restoration-and-Backup-System
 
 ## 1️⃣ Clone the Repository
 
-Open terminal and run:
-
 ```bash
 git clone https://github.com/samarth235/FSEvent-Based-Automatic-File-Restoration-and-Backup-System.git
 ```
 
 ---
 
-## 2️⃣ Navigate to Project Folder
+## 2️⃣ Navigate to the Project Directory
 
 ```bash
 cd FSEvent-Based-Automatic-File-Restoration-and-Backup-System
@@ -65,70 +59,30 @@ cd FSEvent-Based-Automatic-File-Restoration-and-Backup-System
 
 ---
 
-## 3️⃣ Install Required Dependencies
+## 3️⃣ Compile the Program
 
-If a `requirements.txt` file exists:
-
-```bash
-pip install -r requirements.txt
-```
-
-If not, install the main library manually:
+Use the **GCC compiler** to compile the C file:
 
 ```bash
-pip install watchdog
+gcc main.c -o backup_system
 ```
 
 ---
 
-## 4️⃣ Configure the Folder to Monitor
-
-Edit the configuration file or modify the path in the script:
-
-Example:
-
-```python
-WATCH_DIRECTORY = "path/to/your/folder"
-BACKUP_DIRECTORY = "path/to/backup/folder"
-```
-
----
-
-## 5️⃣ Run the File Monitoring System
+## 4️⃣ Run the Program
 
 ```bash
-python monitor.py
+./backup_system
 ```
 
-The system will now start monitoring the selected folder and automatically create backups when changes occur.
-
----
-
-# 🔄 File Restoration
-
-To restore a file from backup, run:
-
-```bash
-python restore.py
-```
-
-Select the file version you want to restore.
+The program will begin monitoring the specified directory and automatically create backups when file changes are detected.
 
 ---
 
 # 📌 Applications
 
-* Automatic backup for important files
-* Protection against accidental file deletion
-* Development project backup
-* Data recovery system
+* Automatic backup of important files
+* Protection against accidental file deletion or modification
+* Monitoring file changes in development environments
+* Basic file recovery and backup system
 
----
-
-# 📜 License
-
-This project is open source and available under the MIT License.
-
-
-* Add **architecture diagram**
-* Add **demo GIF for monitoring + backup**.
