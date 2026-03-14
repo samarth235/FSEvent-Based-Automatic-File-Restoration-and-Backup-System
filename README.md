@@ -1,8 +1,3 @@
-Here is a **similar professional GitHub README** adapted for **your topic (macOS + FSEvents + rsync)**.
-It follows the **same structure and style** as the example you showed, but correctly describes your project.
-
----
-
 # FSEvents-Based Automatic File Backup and Monitoring System
 
 ## 📌 Project Description
