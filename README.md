@@ -1,41 +1,50 @@
-# FSEvent-Based Automatic File Restoration and Backup System
+Here is a **similar professional GitHub README** adapted for **your topic (macOS + FSEvents + rsync)**.
+It follows the **same structure and style** as the example you showed, but correctly describes your project.
+
+---
+
+# FSEvents-Based Automatic File Backup and Monitoring System
 
 ## 📌 Project Description
 
-The **FSEvent-Based Automatic File Restoration and Backup System** is a system-level application written in **C** that monitors file system activities and automatically creates backups when changes occur.
+The **FSEvents-Based Automatic File Backup and Monitoring System** is a system-level application written in **C** that monitors file system activities and automatically creates backups when changes occur.
 
-The program watches a specified directory and detects file events such as **file creation, modification, deletion, and renaming**. Whenever a file is modified or created, the system automatically stores a backup copy in a backup directory. This helps protect important files from accidental loss or corruption.
+The program observes a specified directory and detects file system events such as **file creation and modification**. Whenever a change occurs, the system automatically generates a **timestamped backup snapshot** of the monitored directory.
 
-The system uses **Linux file system event mechanisms (inotify)** to efficiently detect file changes without continuously scanning directories.
+This approach helps protect important files from accidental modification or loss by maintaining multiple backup versions.
+
+The system uses **macOS FSEvents**, a native operating system framework, to efficiently detect file system changes without continuously scanning directories. When a change is detected, the program automatically triggers a backup using **rsync**, a reliable file synchronization utility.
 
 ---
 
 # 🚀 Features
 
 * Real-time file system monitoring
-* Automatic backup of files when changes occur
-* Detection of file creation, modification, and deletion
-* Lightweight and efficient implementation in C
-* Helps prevent accidental data loss
+* Automatic backups triggered by file changes
+* Timestamped backup snapshots
+* Backup activity logging
+* Lightweight implementation in C
+* Efficient event-driven architecture using macOS FSEvents
 
 ---
 
 # ⚙️ Technologies Used
 
 * **C Programming Language**
-* **Linux inotify (File System Event API)**
+* **macOS FSEvents Framework**
+* **rsync (File Synchronization Utility)**
 * **GCC Compiler**
-* **Linux System Calls**
+* **macOS System APIs**
 
 ---
 
 # 📂 Project Structure
 
 ```
-FSEvent-Based-Automatic-File-Restoration-and-Backup-System
+FSEvents-Automatic-Backup-System
 │
-├── main.c              # Main program for file system monitoring
-├── backup/             # Directory where backup copies are stored
+├── backup.c           # Main program for file system monitoring and backup
+├── backups/           # Directory where backup snapshots are stored
 └── README.md
 ```
 
@@ -46,7 +55,7 @@ FSEvent-Based-Automatic-File-Restoration-and-Backup-System
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/samarth235/FSEvent-Based-Automatic-File-Restoration-and-Backup-System.git
+git clone https://github.com/your-repository-name.git
 ```
 
 ---
@@ -54,17 +63,17 @@ git clone https://github.com/samarth235/FSEvent-Based-Automatic-File-Restoration
 ## 2️⃣ Navigate to the Project Directory
 
 ```bash
-cd FSEvent-Based-Automatic-File-Restoration-and-Backup-System
+cd FSEvents-Automatic-Backup-System
 ```
 
 ---
 
 ## 3️⃣ Compile the Program
 
-Use the **GCC compiler** to compile the C file:
+Use the **GCC compiler** and link the macOS CoreServices framework:
 
 ```bash
-gcc main.c -o backup_system
+gcc backup.c -o backup -framework CoreServices
 ```
 
 ---
@@ -72,17 +81,33 @@ gcc main.c -o backup_system
 ## 4️⃣ Run the Program
 
 ```bash
-./backup_system
+./backup
 ```
 
-The program will begin monitoring the specified directory and automatically create backups when file changes are detected.
+The program will ask for:
+
+* Directory to monitor
+* Backup destination directory
+
+After configuration, the system will continuously monitor the directory and automatically create backups whenever file changes occur.
 
 ---
 
 # 📌 Applications
 
 * Automatic backup of important files
-* Protection against accidental file deletion or modification
+* Protection against accidental file modification
 * Monitoring file changes in development environments
-* Basic file recovery and backup system
+* Maintaining versioned file snapshots for recovery
 
+---
+
+# 📚 Concepts Demonstrated
+
+* Operating system file system monitoring
+* Event-driven programming
+* System-level automation
+* File synchronization and backup management
+
+
+It will make your repo look **like a real production project instead of a student repo**.
